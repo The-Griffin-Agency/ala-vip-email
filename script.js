@@ -1,0 +1,3 @@
+const mockups = { a: 'images/multiple-products-v1.png', b: 'images/single-product-v1.png' };
+for (const [id, path] of Object.entries(mockups)) document.querySelector('#' + id + ' img').src = path;
+function show(){const id=location.hash==='#b'?'b':'a';document.querySelectorAll('figure').forEach(f=>f.hidden=f.id!==id);document.querySelectorAll('nav a').forEach(a=>{if(a.hash==='#'+id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')})}addEventListener('hashchange',show);show();
